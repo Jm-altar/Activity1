@@ -1,0 +1,132 @@
+
+*{box-sizing: border-box;
+    margin: 0;
+   font-family: 'Arial';}
+ 
+ 
+ body {   
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+   background: rgb(0, 0, 0);
+ }
+ 
+ header{
+   padding: 2rem 1rem;
+   max-width: 800px;
+   width: 100%;
+   margin: 0 auto;
+ }
+ 
+ header h1{
+   font-size: 2rem;
+   font-weight: 300;
+   color: rgb(255, 255, 255);
+   margin-bottom: 2rem;
+ }
+ 
+ #new_task{
+   display: flex;
+ }
+ 
+ input, button{
+   appearance: none;
+   border: none;
+   outline: none;
+   background: none;
+ }
+ 
+ #newTask{
+   flex: 1 1 0%;
+   background-color: rgba(255, 255, 255, 0.773);
+   padding: 1rem;
+   border-radius: 1rem;
+   margin-right: 1rem;
+   color: rgb(0, 0, 0);
+   font-size: 1rem;
+ }
+ 
+ #newTask::placeholder{
+   color: rgb(69, 69, 69);
+ }
+ 
+ #submitTask{
+   color: violet;
+   font-size: 1rem;
+   font-weight: 700;
+   cursor: pointer;
+   transition: 0.4s
+ }
+ 
+ #submitTask:hover{
+   opacity: 0.8;
+ }
+ #submitTask:active{
+   opacity: 0.6;
+ }
+ 
+ main{
+   flex: 1 1 0%;
+   background-color: rgb(0, 0, 0);
+   max-width: 800px;
+   width: 100%;
+   margin: 0 auto;
+ }
+ 
+ .list{
+   padding: 1rem;
+ }
+ 
+ #tasks .task{
+   display: flex;
+   justify-content: space-between;
+   background-color: #ffffffbf;
+   border-radius: 1rem;
+   padding: 1rem;
+   margin-bottom: 1rem;
+ }
+ 
+ #tasks .task .content{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   width: 100%;
+ }
+ 
+ #tasks .task .content .text {
+   color: rgb(0, 0, 0);
+   font-size: 1rem;
+   flex: 1;
+   box-sizing: border-box;
+   padding: 8px;
+   border-radius: 0.5rem;
+   transition: 0.4s;
+ }
+ 
+ #tasks .task .content .text:not(:read-only) {
+  color: rgb(183, 37, 5);
+ }
+ 
+ #tasks .task .buttons {
+   display: flex;
+   margin: 0 0.5rem;
+   font-size: 1rem;
+   font-weight: 700;
+   margin-left: 0.5rem;
+   transition: 0.4s;
+ }
+ 
+ .task .buttons button:hover{
+   opacity: 0.8;
+ }
+ .task .buttons button:active{
+   opacity: 0.6;
+ }
+ 
+ .task .buttons .edit {
+   color: rgb(0, 159, 0);
+ }
+ 
+ .task .buttons .del{
+   color: rgb(157, 0, 0);
+ }
