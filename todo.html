@@ -10,9 +10,21 @@
       To-Do List:
       <form id = "new_task">
         <input type = "text" id = "newTask" placeholder = "Make a new task"/>
-        <input type = "submit" id = "submitTask" value = "Add Task">
+        <input type = "datetime-local" id = "dtTask"/>
+        <input type = "submit" id = "submitTask" value = "Add Task"/>
       </form>
     </h1>
+    <!-- Sorting method added starts here (CSS not yet added)-->
+    <h2>Sort:
+      <form id = "sort_list">
+        <div class="sort-buttons">
+          <button id="defSort">Default</button>
+          <button id="alphSort">Alphabetically</button>
+          <button id="compSort">Completion</button>
+      </div>
+      </form>
+    </h2>
+    <!-- Sorting method added ends here -->
   </header>
   <main>
     <section class = "list">

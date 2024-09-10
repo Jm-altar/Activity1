@@ -24,6 +24,13 @@
    color: rgb(255, 255, 255);
    margin-bottom: 2rem;
  }
+
+ header h2{
+  font-size: 1.5rem;
+  font-weight: 150;
+  color: rgb(255, 255, 255);
+  margin-bottom: 2rem;
+}
  
  #new_task{
    display: flex;
@@ -46,6 +53,15 @@
    font-size: 1rem;
  }
  
+ #dtTask {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.773);
+  color: rgb(0, 0, 0);
+  font-size: 0.95rem;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
  #newTask::placeholder{
    color: rgb(69, 69, 69);
  }
@@ -103,10 +119,18 @@
    transition: 0.4s;
  }
  
+ #tasks .task .content .expirylog {
+  color: rgb(0, 0, 0);
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  padding: 4px;
+  transition: 0.4s;
+}
+
  #tasks .task .content .text:not(:read-only) {
   color: rgb(183, 37, 5);
  }
- 
+
  #tasks .task .buttons {
    display: flex;
    margin: 0 0.5rem;
@@ -130,3 +154,33 @@
  .task .buttons .del{
    color: rgb(157, 0, 0);
  }
+
+.sort-buttons {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.sort-buttons button {
+  background-color: #ffffff; 
+  color: black;
+  border: none; 
+  border-radius: 1rem; 
+  padding: 0.5rem 1rem; 
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 0 0.5rem;
+}
+
+.sort-buttons button:hover {
+  opacity: 0.8;
+}
+
+.sort-buttons button:active {
+  background-color: gray; 
+  transform: scale(0.98);
+}
+
+.sort-buttons button:focus {
+  outline: none; 
+}
