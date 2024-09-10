@@ -1,5 +1,7 @@
-let tasks: Array<{ text: string, created: string, expires: string, done: boolean }> = [];
+//use Array dur to sorting
+let tasks: Array<{ text: string, created: string, expires: string, done: boolean }> = []; 
 
+//-------------------------Functions------------------------------//
 function retrieveTasks() {
     const storedTasks = localStorage.getItem('tasks');
     if (storedTasks) {
@@ -12,17 +14,17 @@ function storeTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// Sort tasks by a specified criterion
-function sortTasks(criterion: string) {
-    switch (criterion) {
+// Sort tasks by a specified type
+function sortTasks(type: string) {
+    switch (type) {
         case 'default':
             tasks.sort((a, b) => new Date(a.created).getTime() - new Date(b.created).getTime());
             break;
         case 'alphabetical':
-            tasks.sort((a, b) => a.text.localeCompare(b.text));
+            tasks.sort((a, b) => a.text.localeCompare(b.text)); // compares strings
             break;
         case 'done':
-            tasks.sort((a, b) => Number(a.done) - Number(b.done));
+            tasks.sort((a, b) => Number(a.done) - Number(b.done)); //boolean 0 = false, 1 = true
             break;
         default:
             break;
@@ -57,7 +59,7 @@ function displayTasks() {
         task_input.classList.add('text');
         task_input.type = 'text';
         task_input.value = taskData.text;
-        task_input.setAttribute('readonly', 'readonly');
+        task_input.setAttribute('readonly', 'readonly')
 
         const exp_date = document.createElement('p');
         exp_date.classList.add('expirylog');
@@ -87,7 +89,6 @@ function displayTasks() {
             displayTasks();
         });
 
-
         task_del.addEventListener('click', () => {
             tasks = tasks.filter(t => t !== taskData);
             storeTasks();
@@ -97,6 +98,8 @@ function displayTasks() {
         list.appendChild(task_el);
     });
 }
+
+//---------------------------------------------------------//
 
 // Add event listener for page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -147,16 +150,19 @@ const cS = document.getElementById('compSort') as HTMLButtonElement;
 if (dS && aS && cS) {
     dS.addEventListener('click', () => {
         sortTasks('default');
+        storeTasks();
         displayTasks();
     });
 
     aS.addEventListener('click', () => {
         sortTasks('alphabetical');
+        storeTasks();
         displayTasks();
     });
 
     cS.addEventListener('click', () => {
         sortTasks('done');
+        storeTasks();
         displayTasks();
     });
 } else {
